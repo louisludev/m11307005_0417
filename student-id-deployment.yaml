@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-id-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: student-id
+  template:
+    metadata:
+      labels:
+        app: student-id
+    spec:
+      containers:
+      - name: student-id-container
+        image: your-username/student-id-app:latest
+        ports:
+        - containerPort: 80
