@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: student-id-service
 spec:
+  type: NodePort
   selector:
-    app: student-id
+    app: student-id-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: NodePort
+      nodePort: 30080
